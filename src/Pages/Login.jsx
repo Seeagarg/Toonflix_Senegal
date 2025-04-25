@@ -69,7 +69,7 @@ const Login = () => {
     try{
       const num = Cookies.get('number')
       const res = await axios.post(`${base_url_toonflix}/checkStatus?msisdn=${num}`)
-      if(res.status == 200){
+      if(res.status == 200 || res.status == 201 || res.status == 202 ){
         navigate('/home')
       }
     }
